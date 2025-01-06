@@ -15,3 +15,8 @@ export interface HomePageProps {
 export interface PageProps {
     params: { page: string };
 }
+
+export interface PaginationInterface {
+    totalPages: number;
+    currentPage: number;
+}

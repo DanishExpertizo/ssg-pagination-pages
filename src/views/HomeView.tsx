@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import MyPagination from '@/app/component/Pagination';
 import { HomePageProps } from '@/interface/interface';
+import Image from 'next/image';
 
 export default function Products({ products, currentPage, totalPages }: HomePageProps) {
 
@@ -26,23 +26,7 @@ export default function Products({ products, currentPage, totalPages }: HomePage
                 ))}
             </div>
             <div className="flex justify-center mt-8 space-x-4">
-                {currentPage > 1 && (
-                    <Link href={`/page/${currentPage - 1}`} className="px-4 py-2 bg-blue-500 text-white rounded">
-                        Previous
-                    </Link>
-                )}
-                {
-                    Array.from({ length: totalPages }, (_, i) => (
-                        <Link key={i} href={`/page/${i + 1}`} className={`px-4 py-2 border border-blue-500 rounded ${currentPage === i + 1 ? 'bg-blue-600 text-white' : ''}`}>
-                            {i + 1}
-                        </Link>
-                    ))
-                }
-                {currentPage < totalPages && (
-                    <Link href={`/page/${currentPage + 1}`} className="px-4 py-2 bg-blue-500 text-white rounded">
-                        Next
-                    </Link>
-                )}
+                <MyPagination totalPages={totalPages} currentPage={currentPage} />
             </div>
         </div>
     );
