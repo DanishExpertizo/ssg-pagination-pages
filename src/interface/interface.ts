@@ -1,9 +1,15 @@
 export interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    thumbnail: string;
+    id: number
+    title: string
+    description: string
+    price: number
+    discountPercentage: number
+    rating: number
+    stock: number
+    brand: string
+    category: string
+    thumbnail: string
+    images: string[]
 }
 
 export interface HomePageProps {
@@ -19,4 +25,29 @@ export interface PageProps {
 export interface PaginationInterface {
     totalPages: number;
     currentPage: number;
+}
+
+export interface ProductInterface {
+    params: { product: string }
+}
+
+export interface SingleProInterface {
+    product: Product;
+}
+
+export interface NavButtonInterface {
+    direction: string;
+    disabled: boolean;
+    currentPage: number;
+    handlePageChange: (page: number) => void;
+}
+
+export interface PageButtonInterface {
+    page: number;
+    isCurrent: boolean;
+    handlePageChange: (page: number) => void;
+}
+
+export interface IconInterface {
+    className?: string;
 }

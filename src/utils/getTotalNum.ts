@@ -1,5 +1,5 @@
 export const getTotalNum = async () => {
-    const res = await fetch(`https://dummyjson.com/products/`,);
+    const res = await fetch(`https://dummyjson.com/products/`);
     const data = await res.json();
     if (!res.ok) throw new Error('Failed to fetch data');
     
