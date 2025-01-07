@@ -43,9 +43,9 @@ export interface NavButtonInterface {
 }
 
 export interface PageButtonInterface {
-    children: any;
+    children: string | React.ReactNode;
     isActive?: boolean;
-    onClick: any;
+    onClick: () => void;
 }
 
 export interface IconInterface {

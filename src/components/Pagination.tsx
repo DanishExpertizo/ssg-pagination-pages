@@ -23,14 +23,16 @@ export default function Pagination({ totalPages, currentPage }: PaginationInterf
                     {currentPage !== 1 && (
                         <PageButton
                             onClick={() => handlePageChange(1)}
-                            children={<BackwardArrow className='group-hover:-translate-x-1 transition-all duration-300' />}
-                        />
+                        >
+                            <BackwardArrow className='group-hover:-translate-x-1 transition-all duration-300' />
+                        </PageButton>
                     )}
                     {currentPage !== 1 && (
                         <PageButton
                             onClick={() => handlePageChange(currentPage - 1)}
-                            children={<LeftArrow className='group-hover:-translate-x-1 transition-all duration-300' />}
-                        />
+                        >
+                            <LeftArrow className='group-hover:-translate-x-1 transition-all duration-300' />
+                        </PageButton>
                     )}
                     {generateArray(currentPage)
                         .filter((item) => item >= 1 && item <= totalPages)
@@ -40,21 +42,22 @@ export default function Pagination({ totalPages, currentPage }: PaginationInterf
                                     isActive={item === currentPage}
                                     onClick={() => handlePageChange(item)}
                                     key={index}
-                                    children={item}
-                                />
+                                >{item}</PageButton>
                             );
                         })}
                     {currentPage !== totalPages && (
                         <PageButton
                             onClick={() => handlePageChange(currentPage + 1)}
-                            children={<RightArrow className='group-hover:translate-x-1 transition-all duration-300' />}
-                        />
+                        >
+                            <RightArrow className='group-hover:translate-x-1 transition-all duration-300' />
+                        </PageButton>
                     )}
                     {currentPage !== totalPages && (
                         <PageButton
                             onClick={() => handlePageChange(totalPages)}
-                            children={<ForwardArrow className='group-hover:translate-x-1 transition-all duration-300' />}
-                        />
+                        >
+                            <ForwardArrow className='group-hover:translate-x-1 transition-all duration-300' />
+                        </PageButton>
                     )}
                 </div>
             ) : null}
