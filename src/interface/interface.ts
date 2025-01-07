@@ -51,3 +51,9 @@ export interface PageButtonInterface {
 export interface IconInterface {
     className?: string;
 }
+
+export interface TravelButtonInterface {
+    disabled: boolean;
+    direction: 'prev' | 'next';
+    handlePageChange: () => void;
+}

@@ -1,4 +1,4 @@
-import { Product, SingleProInterface } from '@/interface/interface';
+import { SingleProInterface } from '@/interface/interface';
 import Image from 'next/image';
 
 export default function SingleProduct({ product }: SingleProInterface) {
