@@ -43,9 +43,9 @@ export interface NavButtonInterface {
 }
 
 export interface PageButtonInterface {
-    page: number;
-    isCurrent: boolean;
-    handlePageChange: (page: number) => void;
+    children: any;
+    isActive?: boolean;
+    onClick: any;
 }
 
 export interface IconInterface {

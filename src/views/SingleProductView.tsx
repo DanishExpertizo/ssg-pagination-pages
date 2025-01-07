@@ -1,3 +1,4 @@
+import BackBtn from '@/components/BackBtn';
 import { SingleProInterface } from '@/interface/interface';
 import Image from 'next/image';
 
@@ -5,7 +6,9 @@ export default function SingleProduct({ product }: SingleProInterface) {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <BackBtn />
+            <h1 className="text-3xl font-bold text-gray-900 mt-10">Product Details</h1>
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden mt-10">
                 <div className="md:flex">
                     <div className="md:flex-shrink-0">
                         <Image
